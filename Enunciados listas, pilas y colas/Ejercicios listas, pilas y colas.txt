@@ -1,0 +1,53 @@
+EJERCICIOS DE LISTAS,PILAS y COLAS.
+
+Ejercicio nº1:
+Implementar una función que recibe una lista de enteros L y un número entero n de forma que modifique la lista mediante 
+el borrado de todos los elementos de la lista que tengan este valor. 
+
+Ejercicio nº2:
+Escribir una función Reemplazar que tenga como argumentos una pila con tipo de
+elemento int y dos valores int: nuevo y viejo de forma que si el segundo valor aparece en algún lugar de la pila,
+sea reemplazado por el segundo.
+
+Ejercicio nº3:
+Implementar una función Mezcla2 que tenga como parámetros dos listas de enteros 
+ordenados de menor a mayor y que devuelva una nueva lista como unión de ambas 
+con sus elementos ordenados de la misma forma.
+
+Ejercicio nº4:
+Supongamos que TEST es alguna función Booleana que toma cualquier entero dado
+y devuelve un valor igual o distinto a cero.Consideremos el siguiente segmento de código:
+
+N=3;
+p=CrearPila(sizeof(int));
+
+for (i=1;i<=N;i++)
+   if (TEST(i))
+       printf("%d",i);
+   else 
+Push(&i,p);
+
+while (!VaciaPila(p))
+{
+   Tope(&i,p);
+   Pop(p);
+   printf("%d",i);
+}
+Explicar
+
+
+¿Cuáles de las siguientes son posibles salidas del código anterior?.
+
+a)1 2 3
+b)1 3 2
+c)2 1 3
+d)3 1 2
+e)2 3 1
+f)3 2 1
+
+Ejercicio nº5:
+Construir una función que sume los elementos de una lista de enteros recursivamente. 
+
+Ejercicio nº6:
+Construir una función imprimeInverso que imprima los elementos de una lista 
+enlazada de enteros en orden inverso a partir de una posición p.
