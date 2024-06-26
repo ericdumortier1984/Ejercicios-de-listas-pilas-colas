@@ -96,13 +96,13 @@ Devuelve:
 La pila 'pila' con los valores 'viejo' reemplazados por 'nuevo'.
 */
 
-Nodo* ReemplazarElementosEnPilaConStruct(Nodo* _pila, int _nuevo, int _viejo)
+Nodo* ReemplazarElementosEnPilaConStruct(Nodo* _pilaStruct, int _nuevo, int _viejo)
 {
 	Nodo* _nuevaPila = nullptr;
 	
-	while(_pila != nullptr)
+	while(_pilaStruct != nullptr)
 	{
-		int _elemento = Pop(&_pila);
+		int _elemento = _pilaStruct->_dato;
 		if(_elemento == _viejo)
 		{
 			_nuevaPila = Push(_nuevaPila, _nuevo);
@@ -111,6 +111,7 @@ Nodo* ReemplazarElementosEnPilaConStruct(Nodo* _pila, int _nuevo, int _viejo)
 		{
 			_nuevaPila = Push(_nuevaPila, _elemento);
 		}
+		_pilaStruct = _pilaStruct->_siguiente;
 	}
 	return _nuevaPila;
 }
@@ -149,22 +150,34 @@ int main(int argc, char *argv[])
 		_pila.pop();
 	}
 	cout << endl;
+	cout << "---------------------------------------------------------" << endl;
 //-----------------------------------------------------------------------------
 	
-	Nodo* _pila = nullptr;
+	Nodo* _pilaStruct = nullptr;
 	
-	_pila = Push(_pila, 2);
-	_pila = Push(_pila, 10);
-	_pila = Push(_pila, 2);
-	_pila = Push(_pila, 10);
-	_pila = Push(_pila, 2);
+	cout << "Utilizando Struct};" << endl;
+	cout << "Valores en pila original => ";
+	_pilaStruct = Push(_pilaStruct, 2);
+	_pilaStruct = Push(_pilaStruct, 10);
+	_pilaStruct = Push(_pilaStruct, 2);
+	_pilaStruct = Push(_pilaStruct, 10);
+	_pilaStruct = Push(_pilaStruct, 2);
 	
-	_pila = ReemplazarElementosEnPilaConStruct(_pila, 10, 2);
-	
-	while(_pila != nullptr)
+	Nodo* _pilaStructOriginal = _pilaStruct;
+	while(_pilaStructOriginal != nullptr)
 	{
-		cout << _pila->_dato << " ";
-		_pila = _pila->_siguiente;
+		cout << _pilaStructOriginal->_dato << " ";
+		_pilaStructOriginal = _pilaStructOriginal->_siguiente;
+	}
+	cout << endl;
+	
+	_pilaStruct = ReemplazarElementosEnPilaConStruct(_pilaStruct, 10, 2);
+	
+	cout << "Valores en pila modificada => ";
+	while(_pilaStruct != nullptr)
+	{
+		cout << _pilaStruct->_dato << " ";
+		_pilaStruct = _pilaStruct->_siguiente;
 	}
 	cout << endl;
 	
