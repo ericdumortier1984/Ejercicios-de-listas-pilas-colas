@@ -31,6 +31,8 @@ void EliminarElementosPorVectores(vector<int>& _lista, int _numero)
 	}
 }
 
+//-----------------------------------------------------------------------------
+
 //Utilizando [arreglos]
 //Función para eliminar elementos de un arreglo según un valor dado
 void EliminarElementosPorArreglos(int _arr[], int& _tamanio, int _numero2)
@@ -78,6 +80,8 @@ int main(int argc, char *argv[])
 	}
 	cout << endl;
 	cout << endl;
+	
+//-----------------------------------------------------------------------------
 	
 	//Crear un arreglo de enteros
 	cout << "Utilizando[arreglos]" <<endl;
