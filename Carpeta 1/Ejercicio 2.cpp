@@ -46,6 +46,13 @@ void ReemplazarElementosEnPilaConStack(stack<int>& _pila, int _nuevo, int _viejo
 		_aux.pop();
 	}
 }
+
+/*
+La primera función Reemplazar() devuelve una nueva pila modificada, 
+mientras que la segunda función ReemplazarElementosEnPilaConStack() 
+modifica directamente la pila de entrada.
+*/
+
 //-----------------------------------------------------------------------------
 
 //Utilizando una Struct Nodo
