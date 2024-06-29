@@ -117,35 +117,32 @@ public:
 	
 	void Eliminar(int v) 
 	{
-		if (ListaVacia())
-			return;
-		
-		pNodo anterior = nullptr;
-		pNodo nodo = primero;
-		
-		do {
-			if (nodo->valor == v)
+		pNodo nodo;
+		nodo = actual;
+		// Hacer que lista apunte al nodo anterior al de valor v
+		do 
+		{
+			if(actual->siguiente->valor != v) actual = actual->siguiente;
+		} 
+		while(actual->siguiente->valor != v && actual != nodo);
+		// Si existe un nodo con el valor v:
+		if(actual->siguiente->valor == v) 
+		{
+			// Y si la lista sólo tiene un nodo
+			if(actual == actual->siguiente)
 			{
-				if (anterior == nullptr) // Eliminar primer elemento
-				{ 
-					Ultimo();
-					actual->siguiente = nodo->siguiente;
-					primero = nodo->siguiente;
-				} 
-				else // Eliminar un elemento intermedio
-				{ 
-					anterior->siguiente = nodo->siguiente;
-					if (nodo == actual)
-						actual = anterior;
-				}
-				pNodo temp = nodo;
-				nodo = nodo->siguiente;
-				delete temp;
-				return;
+				// Borrar toda la lista
+				delete actual;
+				actual = NULL;
+			} 
+			else
+			{
+				// Si la lista tiene más de un nodo, borrar el nodo de valor v
+				nodo = actual->siguiente;
+				actual->siguiente = nodo->siguiente;
+				delete nodo;
 			}
-			anterior = nodo;
-			nodo = nodo->siguiente;
-		} while (nodo != primero);
+		}
 	}
 };
 
