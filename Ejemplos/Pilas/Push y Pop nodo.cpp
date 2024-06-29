@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-Empujar (Push)
+Empujar (Push):
 Permite añadir un elemento a la pila. Adquiere este nombre porque el último elemento
 siempre va primero, lo cual nos obliga a empujar a los demás hacia atrás. El proceso
 coincide con la inserción de un nodo al inicio de una lista.
@@ -10,7 +10,7 @@ coincide con la inserción de un nodo al inicio de una lista.
 (o NULL en caso de que la lista este vacía).
 2. Asignamos a la cabeza de la lista la referencia al nuevo nodo.
 
-Sacar (Pop)
+Sacar (Pop):
 Permite leer y eliminar un elemento de la lista. Por ello se clasifica como una operación
 de lectura destructiva. Coincide con la eliminación del elemento inicial de una lista y
 con la lectura previa del valor.
